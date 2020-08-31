@@ -3,6 +3,7 @@ let pessoa = '{"nome": "Pedro","idade": 25,"altura": 1.86}';
 // Objeto literal
 let jsonObjeto = JSON.parse(pessoa);
 
+//Teste
 console.log(jsonObjeto);
 
 // Transforma em JSON
