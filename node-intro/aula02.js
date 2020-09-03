@@ -6,19 +6,19 @@ let pets = [
         nome: "Yoku",
         tipo: "Cachorro",
         raca: "Husky Siberiano",
-        genero: "Masculino",
         idade: 3,
+        genero: "Masculino",
         vacinado: false
     }
 ];
 // Visualiza os pets e retorna a quantidade de vacinados
 // E quais os que precisam ser vacinados
-function visualizar(pet){
+const visualizar = (pet) => {
     let vacinados = 0;
     let naoVacinados = 0;
     let sequencia = 1;
     for (let item in pet){
-        console.log("Pet Nº" + sequencia++);
+        console.log("Pet Nº " + sequencia++);
         console.log("Nome: " + pet[item].nome);
         console.log("Tipo: " + pet[item].tipo);
         console.log("Raca: " + pet[item].raca);
@@ -39,7 +39,7 @@ function visualizar(pet){
     console.log(" ");
 };
 //Funcionalidade que valida o novo pet
-function validacao(itens){
+const validacao = (itens) => {
     if (itens == 6){
         return true
     } else {
@@ -49,7 +49,7 @@ function validacao(itens){
 
 //Cadastra o novo pet se for validado
 //Senão retorna um feedback ao cliente
-function cadastrarPet(animal){
+const cadastrarPet = (animal) => {
     if ((typeof(animal) == "object")){
         let numeroDeAtributos = 0;
         for (let item in animal){
@@ -68,21 +68,13 @@ function cadastrarPet(animal){
         console.log("Insira um Pet válido e os seus atributos")
     };
 };
-// O novo pet para teste
-let gato = {
-    nome: "Kiv",
-    tipo: "Gato",
-    raca: "Gato branco",
-    genero: "Masculino",
-    idade: 2,
-    vacinado: true
-};
+
 // Caso queira somente visualizar os dados atuais
 //visualizar(pets);
 // Caso queira cadastrar, após o cadastro o sistema já exibi os novos dados do petshop 
 //cadastrarPet(gato);
 
-function cocatenarjson(lista, json){
+const cocatenarjson = (lista, json) => {
     // Transforma os dados no Json em Objeto
     let arquivo = JSON.parse(json);
     // Faz uma interação em cada item no objeto
@@ -97,4 +89,4 @@ function cocatenarjson(lista, json){
 };
 
 cocatenarjson(pets, json);
-console.log(pets);
+cadastrarPet(pets, json);

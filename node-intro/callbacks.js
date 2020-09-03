@@ -2,26 +2,24 @@
 let servicosFeitos = [];
 // Serviço de banho
 let banho = (pet) => {
-    console.log("O pet " + pet + " Está tomando um ótimo banho");
-    servicosFeitos.push(
-        {
-            nome: pet,
-            servico: "Banho",
-        }
-    );
+    let data = new Date();
+    let dataDefinitiva = data.getDate() + "/" + (data.getMonth() + 1) + "/" + data.getFullYear();
+
+    console.log("O pet " + pet  + " Está recebendo um ótimo banho");
+    servicosFeitos.push("Serviço de banho realizado em " + dataDefinitiva);
 };
+
 // Serviço de massagem
 let massagem = (pet) => {
+    let data = new Date();
+    let dataDefinitiva = data.getDate() + "/" + (data.getMonth() + 1) + "/" + data.getFullYear();
+
     console.log("O pet " + pet  + " Está recebendo uma ótima massagem");
-    servicosFeitos.push(
-        {
-            nome: pet,
-            servico: "Massagem",
-        }
-    );
+    servicosFeitos.push("Serviço de massagem realizado em " + dataDefinitiva);
 };
 
 let servicos = (pet, servico) => servico(pet);
 
+servicos("Yoku", massagem);
 servicos("Yoku", banho);
-console.log(servicosFeitos[0]);
+console.log(servicosFeitos);
