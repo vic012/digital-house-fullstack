@@ -1,15 +1,10 @@
+const { roundToNearestMinutes } = require('date-fns');
 const express = require('express');
-const router = express.Router();
+const routes = express.Router();
+const produtoController = require('../controllers/produtoController');
 
-router.get('/adicionar/:nome/:preco/:quantidade/:codigo', (req, res)=>{
-    let {nome,preco,quantidade,codigo} = req.params;
-    let obj = {
-        nome, // é = nome: req.params.nome,
-        preco, // preco: req.params.preco,
-        quantidade,
-        codigo
-    }
-    res.send(obj);
-})
+routes.get('/adicionar/:nome/:preco/:quantidade/:codigo', produtoController.getProduto);
 
-module.exports = router;
+routes.get('/comprar/produto', produtoController.getQuery);
+
+module.exports = routes;
