@@ -1,0 +1,27 @@
+header {
+    height: 100%;
+    width: 100%;
+    background-color: #ffb90f;
+    margin-top: 60px;
+    position: relative;
+}
+
+header nav img {
+    width: 200px;
+    top: -60px;
+    position: absolute;
+}
+
+header nav ul {
+    list-style-type: none;
+    height: 60px;
+    margin-left: 160px;
+}
+
+header nav ul li {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    padding: 15px 0px 0px 15px;
+}
