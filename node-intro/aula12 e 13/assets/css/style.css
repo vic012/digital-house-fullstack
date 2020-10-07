@@ -48,6 +48,13 @@ section .produto {
     background-size: cover;
     background-color: black;
     background-position: center;
+    margin: 0px 15px 15px 0;
+    display: inline-block;
+}
+
+/*Opacidad*/
+section .produto:hover {
+    opacity: 0.5;
 }
 
 section .img-label-1 {
@@ -76,5 +83,19 @@ section .botao-produto-1 {
     width: 90px;
     height: 40px;
     margin: 0px 105px;
+}
 
+footer {
+    height: 100px;
+    width: 100%;
+    background: orange;
+    text-align: center;
+    color: white;
+    border-radius: 20px 20px 0 0;
+    font-size: 20px;
+    line-height: 100px;
+}
+
+header .form-header .input-header:focus {
+    outline-color: #000000;
 }
