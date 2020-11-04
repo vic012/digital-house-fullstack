@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const saveData = require("../utils/saveData");
 
 const contacts = require("../data/contacts")
 const { cards } = require("../data/cards")
@@ -14,12 +15,7 @@ module.exports = {
     let contact = { id, ...req.body }
     contacts.push(contact)
 
-    let contactsJson = JSON.stringify(contacts);
-    let filePath = path.join("data", "contacts.js");
-
-    fs.writeFileSync(filePath, 'module.exports = ');
-    fs.appendFileSync(filePath, contactsJson);
-
+    saveData(contacts, "contacts.js");
     res.render('index', { cards, added: true });
   }, 
 
@@ -39,11 +35,7 @@ module.exports = {
     contact.email = email
     contact.message = mensagem
 
-    let contactsJson = JSON.stringify(contacts);
-    let filePath = path.join("data", "contacts.js");
-
-    fs.writeFileSync(filePath, 'module.exports = ');
-    fs.appendFileSync(filePath, contactsJson);
+    saveData(contacts, "contacts.js");
 
     res.render('edit-contact', { contact, updated: true })
   },
@@ -52,11 +44,7 @@ module.exports = {
     let id = req.params.id;
     contacts.splice(id - 1, 1);
 
-    let contactsJson = JSON.stringify(contacts);
-    let filePath = path.join("data", "contacts.js");
-
-    fs.writeFileSync(filePath, 'module.exports = ');
-    fs.appendFileSync(filePath, contactsJson);
+    saveData(contacts, "contacts.js");
 
     res.render('contacts', { contacts, deleted: true });
   },
